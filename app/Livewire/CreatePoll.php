@@ -37,6 +37,11 @@ class CreatePoll extends Component
         $this->options = array_values($this->options);
     }
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
+
     public function createPoll() 
     {
         $this->validate();
