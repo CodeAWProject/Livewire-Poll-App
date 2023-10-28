@@ -1,10 +1,9 @@
 <div>
-    <form action="">
+    <form wire:submit.prevent="createPoll">
         <label for="">Poll Title</label>
 
         <input type="text" wire:model.live="title">
 
-        Current title: {{ $title }}
 
         <div class="mb-4 mt-4">
             <button class="btn" wire:click.prevent="addOption">Add Option</button>
@@ -24,6 +23,8 @@
                 
             @endforeach
         </div>
+
+        <button type="submit" class="btn">Create Poll</button>
         
     </form>
 </div>
